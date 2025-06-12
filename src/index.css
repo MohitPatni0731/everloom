@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,11 +98,11 @@
   }
 }
 
-/* Enhanced animations */
+/* Enhanced animations with more sophisticated effects */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -114,7 +113,7 @@
 @keyframes scale-in {
   from {
     opacity: 0;
-    transform: scale(0.9) translateY(20px);
+    transform: scale(0.95) translateY(15px);
   }
   to {
     opacity: 1;
@@ -127,10 +126,10 @@
     transform: translateY(0px) rotate(0deg);
   }
   33% {
-    transform: translateY(-15px) rotate(1deg);
+    transform: translateY(-12px) rotate(0.8deg);
   }
   66% {
-    transform: translateY(-8px) rotate(-1deg);
+    transform: translateY(-6px) rotate(-0.8deg);
   }
 }
 
@@ -145,12 +144,12 @@
 
 @keyframes glow {
   0%, 100% {
-    opacity: 0.5;
+    opacity: 0.4;
     transform: scale(1);
   }
   50% {
-    opacity: 1;
-    transform: scale(1.05);
+    opacity: 0.8;
+    transform: scale(1.02);
   }
 }
 
@@ -165,74 +164,111 @@
 
 @keyframes pulse-ring {
   0% {
-    transform: scale(0.8);
+    transform: scale(0.85);
     opacity: 1;
   }
   100% {
-    transform: scale(2.4);
+    transform: scale(2.2);
     opacity: 0;
   }
 }
 
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes micro-rotate {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
 .animate-fade-in {
-  animation: fade-in 1.2s ease-out forwards;
+  animation: fade-in 1s ease-out forwards;
   opacity: 0;
 }
 
 .animate-scale-in {
-  animation: scale-in 0.8s ease-out forwards;
+  animation: scale-in 0.6s ease-out forwards;
   opacity: 0;
 }
 
 .animate-float {
-  animation: float 8s ease-in-out infinite;
+  animation: float 7s ease-in-out infinite;
 }
 
 .animate-glow {
-  animation: glow 3s ease-in-out infinite;
+  animation: glow 2.5s ease-in-out infinite;
 }
 
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradient-shift 6s ease infinite;
+  animation: gradient-shift 5s ease infinite;
 }
 
 .animate-pulse-ring {
-  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  animation: pulse-ring 1.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
-/* Smooth transitions for better UX */
+.animate-subtle-bounce {
+  animation: subtle-bounce 2s ease-in-out infinite;
+}
+
+.animate-micro-rotate {
+  animation: micro-rotate 4s ease-in-out infinite;
+}
+
+/* Enhanced smooth transitions for premium feel */
 * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, scale;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  transition-duration: 350ms;
 }
 
-/* Enhanced glassmorphism effects */
+/* More sophisticated glassmorphism effects */
 .backdrop-blur-xl {
-  backdrop-filter: blur(24px);
+  backdrop-filter: blur(20px);
 }
 
 .backdrop-blur-3xl {
-  backdrop-filter: blur(64px);
+  backdrop-filter: blur(40px);
 }
 
-/* Custom shadows */
+/* Premium shadow variations */
 .shadow-elegant {
   box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.15), 
-    0 8px 16px -4px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 20px 40px -12px rgba(0, 0, 0, 0.12), 
+    0 6px 12px -4px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .shadow-3xl {
   box-shadow: 
-    0 35px 70px -12px rgba(0, 0, 0, 0.25), 
-    0 8px 32px -8px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 25px 50px -12px rgba(0, 0, 0, 0.18), 
+    0 6px 24px -6px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
-/* Typography enhancements */
+.shadow-premium {
+  box-shadow: 
+    0 32px 64px -16px rgba(0, 0, 0, 0.15), 
+    0 8px 24px -8px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* Typography refinements */
 .font-extralight {
   font-weight: 200;
 }
@@ -241,71 +277,82 @@
   letter-spacing: 0.15em;
 }
 
-/* Custom gradient text */
+/* Enhanced gradient text with better fallbacks */
 .gradient-text {
   background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--primary)));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: hsl(var(--foreground)); /* Fallback */
 }
 
-/* Improved focus states */
+/* Improved focus states with softer appearance */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid hsl(var(--primary));
-  outline-offset: 3px;
-  box-shadow: 0 0 0 4px hsl(var(--primary) / 0.1);
+  outline: 2px solid hsl(var(--primary) / 0.6);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.08);
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with rounded design */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background: hsl(var(--background));
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--border));
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--muted-foreground) / 0.6);
 }
 
-/* Parallax and depth effects */
-.parallax {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.depth-1 {
-  transform: translateZ(10px);
-}
-
-.depth-2 {
-  transform: translateZ(20px);
-}
-
-/* Custom button effects */
+/* Enhanced button effects with more subtlety */
 .btn-magnetic {
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-magnetic:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-/* Loading shimmer effect */
+/* Refined loading shimmer effect */
 .loading-shimmer {
   background: linear-gradient(
     90deg,
     transparent,
-    hsl(var(--muted) / 0.2),
+    hsl(var(--muted) / 0.15),
     transparent
   );
   background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 1.8s infinite;
+}
+
+/* Subtle hover effects for cards */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px) scale(1.005);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 8px 24px -6px rgba(0, 0, 0, 0.08);
+}
+
+/* Enhanced text selection */
+::selection {
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--foreground));
+}
+
+::-moz-selection {
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--foreground));
 }
