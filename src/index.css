@@ -73,6 +73,7 @@
   
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -82,48 +83,91 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
-    font-weight: 700;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Smooth transitions */
-* {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+/* Custom Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Custom scrollbar */
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+/* Enhanced transitions */
+* {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Custom scrollbar for black theme */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+  background: #333333;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #555555;
 }
 
 /* Enhanced focus states */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
 /* Text selection */
 ::selection {
-  background: #dbeafe;
-  color: #1e40af;
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Typography enhancements */
+.font-black {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
