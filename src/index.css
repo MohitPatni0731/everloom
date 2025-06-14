@@ -93,7 +93,7 @@
   }
 }
 
-/* Custom Animations */
+/* Enhanced Custom Animations */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -112,62 +112,112 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
 .animate-spin-slow {
-  animation: spin-slow 10s linear infinite;
+  animation: spin-slow 20s linear infinite;
 }
 
 .animate-spin-reverse {
-  animation: spin-reverse 15s linear infinite;
+  animation: spin-reverse 25s linear infinite;
 }
 
-/* Enhanced transitions */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+/* Smooth transitions for all elements */
 * {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
 
-/* Custom scrollbar for black theme */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 0;
+  background: #c1c1c1;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: #a1a1a1;
 }
 
 /* Enhanced focus states */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 2px solid #000000;
   outline-offset: 2px;
 }
 
 /* Text selection */
 ::selection {
-  background: #ffffff;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Enhanced hover effects */
+.group:hover .group-hover\:text-black {
   color: #000000;
 }
 
-/* Typography enhancements */
-.font-black {
-  font-weight: 900;
-  letter-spacing: -0.04em;
+.group:hover .group-hover\:bg-black {
+  background-color: #000000;
 }
 
-.tracking-tighter {
-  letter-spacing: -0.05em;
+.group:hover .group-hover\:text-white {
+  color: #ffffff;
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
+/* Button enhancements */
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Card hover effects */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.hover\:shadow-md:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
