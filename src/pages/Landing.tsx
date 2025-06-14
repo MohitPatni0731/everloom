@@ -25,7 +25,7 @@ const Landing = () => {
                 <div className="absolute -top-1 -right-1 w-6 h-6 border-3 border-gray-900 rounded-full bg-white animate-orbit shadow-md"></div>
                 <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-gray-400 rounded-full animate-orbit-reverse opacity-70"></div>
               </div>
-              <h1 className="text-4xl font-black tracking-tighter bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-black tracking-tighter bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                 RADIUS
               </h1>
             </div>
@@ -50,28 +50,28 @@ const Landing = () => {
               <div className="space-y-10">
                 <div className="space-y-6">
                   <div className="w-32 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 rounded-full shadow-md"></div>
-                  <h1 className="text-8xl lg:text-9xl font-black leading-[0.8] tracking-tighter">
+                  <h1 className="text-6xl lg:text-7xl font-black leading-[0.8] tracking-tighter">
                     <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
                       Connect
                     </span>
-                    <span className="block text-gray-400 italic font-light text-7xl lg:text-8xl mt-4">
+                    <span className="block text-gray-400 italic font-light text-5xl lg:text-6xl mt-4">
                       with neighbors
                     </span>
                   </h1>
                 </div>
                 
-                <p className="text-2xl leading-relaxed text-gray-600 max-w-2xl font-light tracking-wide">
+                <p className="text-xl leading-relaxed text-gray-600 max-w-2xl font-light tracking-wide">
                   Discover meaningful connections in your immediate neighborhood. 
                   From sharing resources to building friendships — create a community that matters.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-8 pt-8">
-                <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-16 py-6 text-xl font-semibold group shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105">
+                <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-16 py-6 text-lg font-semibold group shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105">
                   Get Started
                   <ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
-                <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-16 py-6 text-xl font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
+                <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-16 py-6 text-lg font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
                   Learn More
                 </Button>
               </div>
@@ -134,10 +134,10 @@ const Landing = () => {
         <div className="max-w-8xl mx-auto px-12 lg:px-16 relative z-10">
           <div className="text-center mb-24">
             <div className="w-20 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 mx-auto mb-8 rounded-full shadow-md"></div>
-            <h2 className="text-6xl font-black tracking-tighter mb-8 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-black tracking-tighter mb-8 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
               How It Works
             </h2>
-            <p className="text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
               Three elegant steps to transform your neighborhood experience
             </p>
           </div>
@@ -163,22 +163,22 @@ const Landing = () => {
                 icon: <Heart className="w-8 h-8" />
               }
             ].map((feature, index) => (
-              <div key={index} className="group relative">
-                <div className="bg-white/80 backdrop-blur-sm p-12 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-700 border border-gray-100/50 hover:border-gray-200/80 relative overflow-hidden transform hover:scale-105">
+              <div key={index} className="group relative h-full">
+                <div className="bg-white/80 backdrop-blur-sm p-12 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-700 border border-gray-100/50 hover:border-gray-200/80 relative overflow-hidden transform hover:scale-105 h-full flex flex-col">
                   {/* Luxury gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-50/20 via-transparent to-gray-100/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className="flex items-start justify-between mb-10">
-                      <span className="text-5xl font-black text-gray-200 group-hover:text-gray-300 transition-colors duration-500">{feature.number}</span>
+                      <span className="text-4xl font-black text-gray-200 group-hover:text-gray-300 transition-colors duration-500">{feature.number}</span>
                       <div className="text-gray-400 group-hover:text-white transition-all duration-500 p-4 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl group-hover:bg-gradient-to-br group-hover:from-gray-800 group-hover:to-gray-900 shadow-md group-hover:shadow-xl">
                         {feature.icon}
                       </div>
                     </div>
-                    <h3 className="text-3xl font-bold mb-6 group-hover:text-gray-900 transition-colors duration-500 tracking-tight">
+                    <h3 className="text-2xl font-bold mb-6 group-hover:text-gray-900 transition-colors duration-500 tracking-tight">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed font-light text-xl">
+                    <p className="text-gray-600 leading-relaxed font-light text-lg flex-grow">
                       {feature.description}
                     </p>
                   </div>
@@ -196,15 +196,15 @@ const Landing = () => {
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-tl from-gray-200/30 to-transparent rounded-full blur-2xl"></div>
         <div className="max-w-7xl mx-auto px-12 lg:px-16 text-center relative z-10">
           <div className="w-24 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 mx-auto mb-12 rounded-full shadow-md"></div>
-          <h2 className="text-7xl lg:text-8xl font-black leading-[0.85] tracking-tighter mb-16">
+          <h2 className="text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter mb-16">
             <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
               Bringing back the
             </span>
-            <span className="block text-gray-400 italic font-light text-6xl lg:text-7xl mt-6">
+            <span className="block text-gray-400 italic font-light text-5xl lg:text-6xl mt-6">
               neighborhood spirit
             </span>
           </h2>
-          <p className="text-3xl leading-relaxed text-gray-600 max-w-5xl mx-auto font-light tracking-wide">
+          <p className="text-2xl leading-relaxed text-gray-600 max-w-5xl mx-auto font-light tracking-wide">
             In a world where we know more about strangers online than the people next door, 
             Radius helps you rediscover the joy of local community and meaningful connections.
           </p>
@@ -216,10 +216,10 @@ const Landing = () => {
         <div className="max-w-8xl mx-auto px-12 lg:px-16">
           <div className="text-center mb-24">
             <div className="w-20 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 mx-auto mb-8 rounded-full shadow-md"></div>
-            <h2 className="text-6xl font-black tracking-tighter mb-8 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-black tracking-tighter mb-8 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
               Get in Touch
             </h2>
-            <p className="text-2xl text-gray-600 font-light">
+            <p className="text-xl text-gray-600 font-light">
               We're here to help you connect
             </p>
           </div>
@@ -235,7 +235,7 @@ const Landing = () => {
                   <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl mb-8 group-hover:bg-gradient-to-br group-hover:from-gray-800 group-hover:to-gray-900 group-hover:text-white transition-all duration-500 shadow-md group-hover:shadow-xl">
                     {contact.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 tracking-tight">
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">
                     {contact.title}
                   </h3>
                   <p className="text-gray-600 font-light text-lg">
@@ -257,20 +257,20 @@ const Landing = () => {
         </div>
         <div className="max-w-6xl mx-auto px-12 lg:px-16 text-center relative z-10">
           <div className="w-24 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 mx-auto mb-12 rounded-full shadow-md"></div>
-          <h2 className="text-7xl lg:text-8xl font-black tracking-tighter mb-12">
+          <h2 className="text-6xl lg:text-7xl font-black tracking-tighter mb-12">
             <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
               Ready to meet
             </span>
-            <span className="block italic font-light text-gray-400 text-6xl lg:text-7xl mt-6">your neighbors?</span>
+            <span className="block italic font-light text-gray-400 text-5xl lg:text-6xl mt-6">your neighbors?</span>
           </h2>
-          <p className="text-3xl text-gray-600 mb-20 font-light max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-600 mb-20 font-light max-w-4xl mx-auto leading-relaxed">
             Join thousands of people already connecting in their neighborhoods.
           </p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-20 py-8 text-2xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-2xl transform hover:scale-105">
+            <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-20 py-8 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-2xl transform hover:scale-105">
               Get Started Free
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-20 py-8 text-2xl font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
+            <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-20 py-8 text-xl font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
               Watch Demo
             </Button>
           </div>
@@ -286,16 +286,16 @@ const Landing = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-white to-gray-200 rounded-2xl shadow-luxury group-hover:shadow-2xl transition-all duration-500"></div>
                 <div className="absolute -top-1 -right-1 w-5 h-5 border-2 border-white rounded-full bg-gray-900 shadow-lg"></div>
               </div>
-              <span className="text-3xl font-black tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RADIUS</span>
+              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RADIUS</span>
             </div>
             <div className="flex space-x-12 text-gray-400 font-light">
-              <a href="#" className="hover:text-white transition-colors duration-300 text-xl hover:scale-105 transform">Privacy</a>
-              <a href="#" className="hover:text-white transition-colors duration-300 text-xl hover:scale-105 transform">Terms</a>
-              <a href="#" className="hover:text-white transition-colors duration-300 text-xl hover:scale-105 transform">Contact</a>
+              <a href="#" className="hover:text-white transition-colors duration-300 text-lg hover:scale-105 transform">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors duration-300 text-lg hover:scale-105 transform">Terms</a>
+              <a href="#" className="hover:text-white transition-colors duration-300 text-lg hover:scale-105 transform">Contact</a>
             </div>
           </div>
           <div className="text-center mt-16 pt-12 border-t border-gray-700">
-            <p className="text-gray-400 font-light text-xl">
+            <p className="text-gray-400 font-light text-lg">
               © 2024 Radius. All rights reserved.
             </p>
           </div>
