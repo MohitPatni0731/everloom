@@ -50,11 +50,11 @@ const Landing = () => {
               <div className="space-y-10">
                 <div className="space-y-6">
                   <div className="w-32 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 rounded-full shadow-md"></div>
-                  <h1 className="text-5xl lg:text-6xl font-black leading-[0.8] tracking-tighter">
+                  <h1 className="text-4xl lg:text-5xl font-black leading-[0.8] tracking-tighter">
                     <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
                       Connect
                     </span>
-                    <span className="block text-gray-400 italic font-light text-4xl lg:text-5xl mt-4">
+                    <span className="block text-gray-400 italic font-light text-3xl lg:text-4xl mt-4">
                       with neighbors
                     </span>
                   </h1>
@@ -78,90 +78,90 @@ const Landing = () => {
             </div>
 
             {/* Right Column - Neighborhood Connection Animation */}
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-[500px] h-[500px]">
+            <div className="relative flex items-start justify-center mt-8">
+              <div className="relative w-[450px] h-[450px]">
                 {/* Central Hub - Your House */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 rounded-2xl shadow-luxury relative">
-                    <Home className="w-8 h-8 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-gray-900 via-gray-700 to-gray-500 rounded-2xl shadow-luxury relative">
+                    <Home className="w-7 h-7 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     <div className="absolute -inset-2 bg-gradient-to-r from-gray-400/20 to-gray-600/20 rounded-3xl animate-pulse-luxury"></div>
                   </div>
                 </div>
 
                 {/* Radius Circle */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-2 border-gray-300/40 rounded-full animate-radius-pulse z-10">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 border-2 border-gray-300/40 rounded-full animate-radius-pulse z-10">
                   <div className="absolute inset-0 border border-gray-200/30 rounded-full animate-radius-pulse-delayed"></div>
                 </div>
 
                 {/* Neighbor Houses - Inner Ring */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 animate-orbit-slow z-15">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-44 h-44 animate-orbit-slow z-15">
                   {/* House 1 */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg shadow-md relative group">
-                      <Home className="w-4 h-4 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="w-7 h-7 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg shadow-md relative group">
+                      <Home className="w-3.5 h-3.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                       <div className="absolute inset-0 bg-gray-400/30 rounded-lg scale-0 group-hover:scale-150 transition-transform duration-500 animate-connect-pulse"></div>
                     </div>
                   </div>
                   
                   {/* House 2 */}
-                  <div className="absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg shadow-md relative group">
-                      <Home className="w-4 h-4 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute top-1/2 -right-3 transform -translate-y-1/2">
+                    <div className="w-7 h-7 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg shadow-md relative group">
+                      <Home className="w-3.5 h-3.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                       <div className="absolute inset-0 bg-gray-400/30 rounded-lg scale-0 group-hover:scale-150 transition-transform duration-500 animate-connect-pulse-delayed"></div>
                     </div>
                   </div>
                   
                   {/* House 3 */}
-                  <div className="absolute -bottom-4 right-1/3 transform">
-                    <div className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg shadow-md relative group">
-                      <Home className="w-4 h-4 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute -bottom-3 right-1/3 transform">
+                    <div className="w-7 h-7 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg shadow-md relative group">
+                      <Home className="w-3.5 h-3.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                       <div className="absolute inset-0 bg-gray-400/30 rounded-lg scale-0 group-hover:scale-150 transition-transform duration-500 animate-connect-pulse"></div>
                     </div>
                   </div>
                   
                   {/* House 4 */}
-                  <div className="absolute top-1/2 -left-4 transform -translate-y-1/2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg shadow-md relative group">
-                      <Home className="w-4 h-4 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute top-1/2 -left-3 transform -translate-y-1/2">
+                    <div className="w-7 h-7 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg shadow-md relative group">
+                      <Home className="w-3.5 h-3.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                       <div className="absolute inset-0 bg-gray-400/30 rounded-lg scale-0 group-hover:scale-150 transition-transform duration-500 animate-connect-pulse-delayed"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Neighbor Houses - Outer Ring */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 animate-orbit-reverse-slow z-15">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 animate-orbit-reverse-slow z-15">
                   {/* House 5 */}
-                  <div className="absolute -top-3 left-1/6">
-                    <div className="w-6 h-6 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg shadow-sm relative">
-                      <Home className="w-3 h-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute -top-2 left-1/6">
+                    <div className="w-5 h-5 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg shadow-sm relative">
+                      <Home className="w-2.5 h-2.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     </div>
                   </div>
                   
                   {/* House 6 */}
-                  <div className="absolute top-1/4 -right-3">
-                    <div className="w-6 h-6 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg shadow-sm relative">
-                      <Home className="w-3 h-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute top-1/4 -right-2">
+                    <div className="w-5 h-5 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg shadow-sm relative">
+                      <Home className="w-2.5 h-2.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     </div>
                   </div>
                   
                   {/* House 7 */}
-                  <div className="absolute -bottom-3 right-1/4">
-                    <div className="w-6 h-6 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg shadow-sm relative">
-                      <Home className="w-3 h-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute -bottom-2 right-1/4">
+                    <div className="w-5 h-5 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg shadow-sm relative">
+                      <Home className="w-2.5 h-2.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     </div>
                   </div>
                   
                   {/* House 8 */}
-                  <div className="absolute bottom-1/5 -left-3">
-                    <div className="w-6 h-6 bg-gradient-to-br from-gray-300 to-gray-500 rounded-lg shadow-sm relative">
-                      <Home className="w-3 h-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute bottom-1/5 -left-2">
+                    <div className="w-5 h-5 bg-gradient-to-br from-gray-300 to-gray-500 rounded-lg shadow-sm relative">
+                      <Home className="w-2.5 h-2.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     </div>
                   </div>
                   
                   {/* House 9 */}
                   <div className="absolute top-1/5 left-1/3">
-                    <div className="w-6 h-6 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg shadow-sm relative">
-                      <Home className="w-3 h-3 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                    <div className="w-5 h-5 bg-gradient-to-br from-gray-500 to-gray-700 rounded-lg shadow-sm relative">
+                      <Home className="w-2.5 h-2.5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                     </div>
                   </div>
                 </div>
@@ -169,14 +169,14 @@ const Landing = () => {
                 {/* Connection Lines */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
                   {/* Animated connection lines from center to neighbors */}
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 animate-connection-line origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-45 animate-connection-line-delayed origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-90 animate-connection-line origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-135 animate-connection-line-delayed origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-180 animate-connection-line origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-225 animate-connection-line-delayed origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-270 animate-connection-line origin-left"></div>
-                  <div className="absolute top-1/2 left-1/2 w-24 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-315 animate-connection-line-delayed origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 animate-connection-line origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-45 animate-connection-line-delayed origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-90 animate-connection-line origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-135 animate-connection-line-delayed origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-180 animate-connection-line origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-225 animate-connection-line-delayed origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-270 animate-connection-line origin-left"></div>
+                  <div className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-gray-400 via-gray-600 to-transparent transform -translate-y-1/2 rotate-315 animate-connection-line-delayed origin-left"></div>
                 </div>
               </div>
             </div>
