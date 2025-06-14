@@ -356,3 +356,23 @@ a:focus-visible {
   background: hsl(var(--primary) / 0.15);
   color: hsl(var(--foreground));
 }
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', 'serif';
+    letter-spacing: -0.015em;
+  }
+  h1 { font-size: 2.25rem; } /* ~36px */
+  h2 { font-size: 1.875rem; } /* ~30px */
+  h3 { font-size: 1.5rem; } /* ~24px */
+  h4 { font-size: 1.25rem; } /* ~20px */
+  @media (min-width: 768px) {
+    h1 { font-size: 3.5rem; } /* ~56px */
+    h2 { font-size: 2.5rem; } /* ~40px */
+    h3 { font-size: 2rem; } /* ~32px */
+    h4 { font-size: 1.5rem; } /* ~24px */
+  }
+  p, .text-lg, .text-xl, .text-base {
+    font-size: 0.96em !important; /* subtle reduction for overall smaller look */
+  }
+}
