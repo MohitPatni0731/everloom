@@ -77,7 +77,7 @@ const Landing = () => {
             </div>
 
             {/* Right Column - Neighborhood Connection Animation */}
-            <div className="relative flex items-start justify-center -mt-4">
+            <div className="relative flex items-start justify-center -mt-12 -ml-8">
               <div className="relative w-[450px] h-[450px]">
                 {/* Central Hub - Your House */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
