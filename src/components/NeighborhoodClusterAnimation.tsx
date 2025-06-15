@@ -1,76 +1,38 @@
+
 import { Home } from "lucide-react";
 import React from "react";
 
 // Modern minimalist constellation cluster colors
 const nodeColors = [
-  "bg-gradient-to-br from-[#e0e7ee] to-[#bcc4d4]",
-  "bg-gradient-to-br from-[#f3f4f6] to-[#b8c0d0]",
-  "bg-gradient-to-br from-[#d2dae4] to-[#a6b4c8]",
+  "bg-gradient-to-br from-blue-500 to-blue-600",
+  "bg-gradient-to-br from-green-500 to-green-600", 
+  "bg-gradient-to-br from-purple-500 to-purple-600",
+  "bg-gradient-to-br from-orange-500 to-orange-600",
 ];
-
-const smallDot = (
-  <div className="rounded-full bg-gradient-to-br from-gray-50 via-gray-200 to-white w-3 h-3 shadow shadow-black/10 opacity-60"></div>
-);
-
-const line = (className: string, style = {}) => (
-  <div className={className} style={style}>
-    <svg width="64" height="64" fill="none">
-      <line
-        x1="4"
-        y1="60"
-        x2="60"
-        y2="8"
-        stroke="#cdd6e0"
-        strokeWidth="2"
-        strokeOpacity="0.22"
-        strokeLinecap="round"
-      />
-    </svg>
-  </div>
-);
-
-const subtleRing = (className: string, diameter: number, opacity = 0.16) => (
-  <svg
-    className={className}
-    width={diameter}
-    height={diameter}
-    fill="none"
-    style={{ filter: "blur(4px)" }}
-    aria-hidden="true"
-  >
-    <circle
-      cx={diameter / 2}
-      cy={diameter / 2}
-      r={diameter / 2 - 2}
-      stroke="#eaeef2"
-      strokeWidth="3"
-      strokeOpacity={opacity}
-    />
-  </svg>
-);
 
 const neighborNode = (
   iconSize: number,
   colorClass: string,
   pos: { top: number; left: number },
-  boxSize = 28
+  boxSize = 32
 ) => (
   <div
-    className={`absolute`}
+    className={`absolute animate-pulse-luxury`}
     style={{
       top: pos.top,
       left: pos.left,
       width: boxSize,
       height: boxSize,
-      zIndex: 1,
+      zIndex: 2,
     }}
   >
     <div
-      className={`${colorClass} w-full h-full rounded-2xl shadow-xl flex items-center justify-center opacity-90`}
+      className={`${colorClass} w-full h-full rounded-2xl shadow-xl flex items-center justify-center`}
     >
-      <Home className={`w-[${iconSize}px] h-[${iconSize}px] text-white opacity-90`} />
+      <Home className={`w-[${iconSize}px] h-[${iconSize}px] text-white`} />
     </div>
-    {smallDot}
+    {/* Connection pulse effect */}
+    <div className="absolute inset-0 rounded-2xl bg-white/20 animate-ping"></div>
   </div>
 );
 
@@ -79,116 +41,150 @@ export const NeighborhoodClusterAnimation = () => {
     <div
       className="absolute pointer-events-none select-none"
       style={{
-        top: "-120px",
-        left: "-80px",
-        zIndex: 0,
-        width: 400,
-        height: 340,
-        // Keeps cluster far in background
+        top: "50px",
+        right: "80px",
+        zIndex: 1,
+        width: 500,
+        height: 400,
       }}
     >
-      {/* Soft haze background gradient */}
-      <div className="absolute top-10 left-10 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-gray-100/20 via-white/70 to-transparent blur-2xl"></div>
-      {/* Outer subtle premium rings */}
-      {subtleRing("absolute top-[40px] left-[40px]", 220, 0.10)}
-      {subtleRing("absolute top-[24px] left-[32px]", 260, 0.075)}
-      {/* Central home node */}
-      <div className="absolute top-[115px] left-[115px] w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-[#b2b9c2] flex items-center justify-center shadow-2xl ring-2 ring-white/30">
-        <Home className="w-8 h-8 text-white" />
-        {/* Minimal pulse */}
-        <div className="absolute -inset-4 rounded-2xl bg-gray-200/10 animate-pulse-luxury"></div>
+      {/* Soft background glow */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-gradient-radial from-blue-100/30 via-purple-50/20 to-transparent blur-3xl animate-pulse-subtle"></div>
+      
+      {/* Outer connection rings */}
+      <svg
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        width="320"
+        height="320"
+        fill="none"
+      >
+        <circle
+          cx="160"
+          cy="160"
+          r="140"
+          stroke="url(#connectionGradient)"
+          strokeWidth="2"
+          strokeOpacity="0.3"
+          strokeDasharray="8 8"
+          className="animate-spin-gentle"
+        />
+        <circle
+          cx="160"
+          cy="160"
+          r="100"
+          stroke="url(#connectionGradient2)"
+          strokeWidth="2"
+          strokeOpacity="0.4"
+          strokeDasharray="6 6"
+          className="animate-spin-gentle"
+          style={{ animationDirection: "reverse", animationDuration: "12s" }}
+        />
+        <defs>
+          <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+            <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.6" />
+          </linearGradient>
+          <linearGradient id="connectionGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.5" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      {/* Central main home - represents you */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex items-center justify-center shadow-2xl ring-4 ring-white/40 z-10">
+        <Home className="w-10 h-10 text-white" />
+        {/* Central pulse */}
+        <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-blue-400/20 to-purple-400/20 animate-ping"></div>
+        <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-300/30 to-purple-300/30 animate-pulse-luxury"></div>
       </div>
-      {/* Neighbor nodes (carefully positioned for constellation effect) */}
-      {neighborNode(
-        14,
-        nodeColors[0],
-        { top: 37, left: 57 },
-        28
-      )}
-      {neighborNode(
-        18,
-        nodeColors[1],
-        { top: 202, left: 58 },
-        32
-      )}
-      {neighborNode(
-        14,
-        nodeColors[2],
-        { top: 80, left: 222 },
-        28
-      )}
-      {/* Soft connector lines */}
+
+      {/* Neighbor nodes positioned around central home */}
+      {neighborNode(16, nodeColors[0], { top: 80, left: 120 }, 36)}
+      {neighborNode(18, nodeColors[1], { top: 160, left: 60 }, 40)}
+      {neighborNode(16, nodeColors[2], { top: 260, left: 140 }, 36)}
+      {neighborNode(20, nodeColors[3], { top: 180, left: 320 }, 44)}
+      {neighborNode(14, nodeColors[0], { top: 100, left: 280 }, 32)}
+      {neighborNode(16, nodeColors[1], { top: 300, left: 240 }, 36)}
+
+      {/* Dynamic connection lines */}
       <svg
-        className="absolute left-[142px] top-[128px] z-0"
-        width="80"
-        height="80"
+        className="absolute top-0 left-0 w-full h-full"
         fill="none"
       >
+        {/* Lines from center to each neighbor */}
         <line
-          x1="8"
-          y1="8"
-          x2="45"
-          y2="-60"
-          stroke="#c0cadb"
-          strokeWidth="2"
-          strokeOpacity="0.15"
+          x1="250"
+          y1="200"
+          x2="138"
+          y2="98"
+          stroke="url(#lineGradient1)"
+          strokeWidth="3"
+          strokeOpacity="0.6"
+          strokeLinecap="round"
+          className="animate-connection-line"
         />
-      </svg>
-      {/* Central to neighbor 1 */}
-      <svg
-        className="absolute left-[125px] top-[128px]"
-        width="70"
-        height="74"
-        fill="none"
-      >
         <line
-          x1="35"
-          y1="35"
-          x2="-35"
-          y2="-70"
-          stroke="#d2dbe5"
-          strokeWidth="2"
-          strokeOpacity="0.12"
+          x1="250"
+          y1="200"
+          x2="80"
+          y2="180"
+          stroke="url(#lineGradient2)"
+          strokeWidth="3"
+          strokeOpacity="0.6"
+          strokeLinecap="round"
+          className="animate-connection-line-delayed"
         />
-      </svg>
-      {/* Central to neighbor 2 */}
-      <svg
-        className="absolute left-[138px] top-[148px]"
-        width="88"
-        height="88"
-        fill="none"
-      >
         <line
-          x1="12"
-          y1="15"
-          x2="-44"
-          y2="65"
-          stroke="#ced6e0"
-          strokeWidth="2"
-          strokeOpacity="0.11"
+          x1="250"
+          y1="200"
+          x2="158"
+          y2="278"
+          stroke="url(#lineGradient3)"
+          strokeWidth="3"
+          strokeOpacity="0.6"
+          strokeLinecap="round"
+          className="animate-connection-line"
+          style={{ animationDelay: "1s" }}
         />
-      </svg>
-      {/* Central to neighbor 3 */}
-      <svg
-        className="absolute left-[159px] top-[136px]"
-        width="50"
-        height="50"
-        fill="none"
-      >
         <line
-          x1="22"
-          y1="15"
-          x2="46"
-          y2="-54"
-          stroke="#c2cbd8"
-          strokeWidth="2"
-          strokeOpacity="0.11"
+          x1="250"
+          y1="200"
+          x2="342"
+          y2="202"
+          stroke="url(#lineGradient4)"
+          strokeWidth="3"
+          strokeOpacity="0.6"
+          strokeLinecap="round"
+          className="animate-connection-line-delayed"
+          style={{ animationDelay: "0.5s" }}
         />
+        
+        <defs>
+          <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
+          </linearGradient>
+          <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#10b981" stopOpacity="0.2" />
+          </linearGradient>
+          <linearGradient id="lineGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.2" />
+          </linearGradient>
+          <linearGradient id="lineGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
       </svg>
-      {/* More minimal random small orbs for constellation effect */}
-      <div className="absolute top-[52px] left-[240px]">{smallDot}</div>
-      <div className="absolute top-[175px] left-[25px]">{smallDot}</div>
-      <div className="absolute top-[260px] left-[180px]">{smallDot}</div>
+
+      {/* Floating connection particles */}
+      <div className="absolute top-[120px] left-[200px] w-3 h-3 bg-blue-400 rounded-full animate-bounce-slow opacity-60"></div>
+      <div className="absolute top-[180px] left-[160px] w-2 h-2 bg-green-400 rounded-full animate-bounce-slow opacity-70" style={{ animationDelay: "1s" }}></div>
+      <div className="absolute top-[240px] left-[280px] w-3 h-3 bg-purple-400 rounded-full animate-bounce-slow opacity-50" style={{ animationDelay: "2s" }}></div>
     </div>
   );
 };
