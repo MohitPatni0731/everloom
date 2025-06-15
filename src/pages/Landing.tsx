@@ -1,6 +1,5 @@
-import { ArrowRight, MapPin, Users, Heart, Mail, Phone, MessageCircle, Home } from "lucide-react";
+import { ArrowRight, MapPin, Users, Heart, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import NeighborhoodClusterAnimation from "@/components/NeighborhoodClusterAnimation";
 
 const Landing = () => {
   return (
@@ -41,44 +40,38 @@ const Landing = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Ultra Premium */}
-      <section className="relative pt-40 pb-32 px-12 lg:px-16 z-10">
-        {/* Animation cluster, absolutely positioned far up and left */}
-        <NeighborhoodClusterAnimation />
-        <div className="max-w-8xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            {/* Left Column */}
-            <div className="space-y-16">
-              <div className="space-y-10">
-                <div className="space-y-6">
-                  <div className="w-32 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 rounded-full shadow-md"></div>
-                  <h1 className="text-4xl lg:text-5xl font-black leading-[0.8] tracking-tighter">
-                    <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
-                      Connect
-                    </span>
-                    <span className="block text-gray-400 italic font-light text-3xl lg:text-4xl mt-4">
-                      with neighbors
-                    </span>
-                  </h1>
-                </div>
-                
-                <p className="text-lg leading-relaxed text-gray-600 max-w-2xl font-light tracking-wide">
-                  Discover meaningful connections in your immediate neighborhood. 
-                  From sharing resources to building friendships — create a community that matters.
-                </p>
+      {/* Hero Section - Centered */}
+      <section className="relative pt-40 pb-32 px-12 lg:px-16 z-10 min-h-screen flex items-center justify-center">
+        <div className="max-w-8xl mx-auto relative z-10 text-center">
+          <div className="space-y-16">
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <div className="w-32 h-2 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 rounded-full shadow-md mx-auto"></div>
+                <h1 className="text-6xl lg:text-7xl font-black leading-[0.8] tracking-tighter">
+                  <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+                    Connect
+                  </span>
+                  <span className="block text-gray-400 italic font-light text-5xl lg:text-6xl mt-6">
+                    with neighbors
+                  </span>
+                </h1>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-8 pt-8">
-                <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-16 py-6 text-lg font-semibold group shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105">
-                  Get Started
-                  <ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-16 py-6 text-lg font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
-                  Learn More
-                </Button>
-              </div>
+              <p className="text-2xl leading-relaxed text-gray-600 max-w-4xl mx-auto font-light tracking-wide">
+                Discover meaningful connections in your immediate neighborhood. 
+                From sharing resources to building friendships — create a community that matters.
+              </p>
             </div>
-            {/* Right Column REMOVED */}
+            
+            <div className="flex flex-col sm:flex-row gap-8 justify-center pt-8">
+              <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-16 py-6 text-lg font-semibold group shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105">
+                Get Started
+                <ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
+              </Button>
+              <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-16 py-6 text-lg font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </section>
