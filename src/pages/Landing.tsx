@@ -1,3 +1,4 @@
+
 import { ArrowRight, MapPin, Users, Heart, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,9 +21,11 @@ const Landing = () => {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-6">
               <div className="relative group">
-                <div className="w-12 h-12 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl shadow-luxury group-hover:shadow-2xl transition-all duration-500 rotate-3 group-hover:rotate-6"></div>
-                <div className="absolute -top-1 -right-1 w-6 h-6 border-3 border-gray-900 rounded-full bg-white animate-orbit shadow-md"></div>
-                <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-gray-400 rounded-full animate-orbit-reverse opacity-70"></div>
+                <img 
+                  src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
+                  alt="RADIUS Logo" 
+                  className="w-12 h-12 rounded-2xl shadow-luxury group-hover:shadow-2xl transition-all duration-500 group-hover:scale-105"
+                />
               </div>
               <h1 className="text-3xl font-black tracking-tighter bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                 RADIUS
@@ -231,8 +234,11 @@ const Landing = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-3 md:mb-0">
               <div className="relative group">
-                <div className="w-6 h-6 bg-gradient-to-br from-white to-gray-200 rounded-xl shadow-luxury group-hover:shadow-2xl transition-all duration-500"></div>
-                <div className="absolute -top-0.5 -right-0.5 w-2 h-2 border border-white rounded-full bg-gray-900 shadow-lg"></div>
+                <img 
+                  src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
+                  alt="RADIUS Logo" 
+                  className="w-6 h-6 rounded-xl shadow-luxury group-hover:shadow-2xl transition-all duration-500"
+                />
               </div>
               <span className="text-base font-black tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RADIUS</span>
             </div>
