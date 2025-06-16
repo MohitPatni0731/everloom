@@ -18,16 +18,16 @@ const Landing = () => {
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-2xl border-b border-gray-100/50 z-50 shadow-luxury">
         <div className="max-w-8xl mx-auto px-12 lg:px-16">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               <div className="relative group">
                 <img 
                   src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
                   alt="RADIUS Logo" 
-                  className="w-14 h-14 group-hover:scale-105 transition-all duration-500"
+                  className="w-12 h-12 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
-              <h1 className="text-4xl font-bold tracking-wide font-serif lowercase bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
-                radius
+              <h1 className="text-3xl font-black tracking-tighter bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                RADIUS
               </h1>
             </div>
             <div className="flex items-center space-x-8">
@@ -236,10 +236,10 @@ const Landing = () => {
                 <img 
                   src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
                   alt="RADIUS Logo" 
-                  className="w-7 h-7 group-hover:scale-105 transition-all duration-500"
+                  className="w-6 h-6 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
-              <span className="text-lg font-bold tracking-wide font-serif lowercase bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">radius</span>
+              <span className="text-base font-black tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RADIUS</span>
             </div>
             <div className="flex space-x-5 text-gray-400 font-light text-sm">
               <a href="#" className="hover:text-white transition-colors duration-300 hover:scale-105 transform">Privacy</a>
