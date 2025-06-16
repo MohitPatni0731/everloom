@@ -26,7 +26,7 @@ const Landing = () => {
                   className="w-14 h-14 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
-              <h1 className="text-3xl font-light tracking-wider font-playfair lowercase bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold tracking-wide font-serif lowercase bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                 radius
               </h1>
             </div>
@@ -239,7 +239,7 @@ const Landing = () => {
                   className="w-7 h-7 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
-              <span className="text-base font-light tracking-wide font-playfair lowercase bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">radius</span>
+              <span className="text-lg font-bold tracking-wide font-serif lowercase bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">radius</span>
             </div>
             <div className="flex space-x-5 text-gray-400 font-light text-sm">
               <a href="#" className="hover:text-white transition-colors duration-300 hover:scale-105 transform">Privacy</a>
