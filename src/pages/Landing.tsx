@@ -1,4 +1,3 @@
-
 import { ArrowRight, MapPin, Users, Heart, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -24,7 +23,7 @@ const Landing = () => {
                 <img 
                   src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
                   alt="RADIUS Logo" 
-                  className="w-12 h-12 rounded-2xl shadow-luxury group-hover:shadow-2xl transition-all duration-500 group-hover:scale-105"
+                  className="w-12 h-12 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
               <h1 className="text-3xl font-black tracking-tighter bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
@@ -237,7 +236,7 @@ const Landing = () => {
                 <img 
                   src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
                   alt="RADIUS Logo" 
-                  className="w-6 h-6 rounded-xl shadow-luxury group-hover:shadow-2xl transition-all duration-500"
+                  className="w-6 h-6 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
               <span className="text-base font-black tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RADIUS</span>
