@@ -1,7 +1,11 @@
-import { ArrowRight, MapPin, Users, Heart, Mail, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, MapPin, Users, Heart, Mail, Phone, MessageCircle, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 text-black overflow-hidden relative">
       {/* Sophisticated Floating Elements */}
@@ -21,22 +25,43 @@ const Landing = () => {
             <div className="flex items-center space-x-6">
               <div className="relative group">
                 <img 
-                  src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
-                  alt="RADIUS Logo" 
-                  className="w-12 h-12 group-hover:scale-105 transition-all duration-500"
+                  src="/logo.png" 
+                  alt="EVERLOOM Logo" 
+                  className="w-20 h-20 group-hover:scale-105 transition-all duration-500 filter contrast-125 brightness-110"
                 />
               </div>
-              <h1 className="text-3xl font-black tracking-tighter bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
-                RADIUS
+              <h1 className="text-5xl font-medium italic tracking-[0.05em] text-black relative" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <span className="relative">
+                  everloom
+                  <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-30"></div>
+                </span>
               </h1>
             </div>
             <div className="flex items-center space-x-8">
-              <Button variant="ghost" size="lg" className="text-gray-600 hover:text-gray-900 hover:bg-gray-50/50 font-medium px-8 py-3 rounded-xl transition-all duration-300 hover:shadow-md">
-                Sign In
-              </Button>
-              <Button size="lg" className="bg-gradient-to-r from-gray-900 to-gray-800 text-white hover:from-gray-800 hover:to-gray-700 px-10 py-3 rounded-xl shadow-luxury hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
-                Sign Up
-              </Button>
+              <SignedOut>
+                <SignInButton mode="redirect">
+                  <Button variant="ghost" size="lg" className="text-gray-600 hover:text-gray-900 hover:bg-gray-50/50 font-medium px-8 py-3 rounded-xl transition-all duration-300 hover:shadow-md">
+                    Sign In
+                  </Button>
+                </SignInButton>
+                <SignUpButton mode="redirect">
+                  <Button size="lg" className="bg-gradient-to-r from-gray-900 to-gray-800 text-white hover:from-gray-800 hover:to-gray-700 px-10 py-3 rounded-xl shadow-luxury hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    Sign Up
+                  </Button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton 
+                  appearance={{
+                    elements: {
+                      avatarBox: "w-10 h-10",
+                      userButtonPopoverCard: "shadow-2xl border-0 bg-white/90 backdrop-blur-sm",
+                      userButtonPopoverActionButton: "hover:bg-gray-50"
+                    }
+                  }}
+                  userProfileUrl="/profile"
+                />
+              </SignedIn>
             </div>
           </div>
         </div>
@@ -66,11 +91,42 @@ const Landing = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-8 justify-center pt-8">
-              <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-16 py-6 text-lg font-semibold group shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105">
-                Get Started
-                <ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-16 py-6 text-lg font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
+              <SignedOut>
+                <SignUpButton mode="redirect">
+                  <Button
+                    onClick={() => {
+                      try {
+                        // Handle navigation without logging
+                        window.location.href = '/dashboard';
+                      } catch (error) {
+                        // Silent error handling for production
+                      }
+                    }}
+                    size="lg" 
+                    className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 px-16 py-6 text-lg font-semibold shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105"
+                  >
+                    Get Started
+                  </Button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 px-16 py-6 text-lg font-semibold group shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105"
+                  onClick={() => {
+                    try {
+                      navigate('/dashboard');
+                    } catch (error) {
+                      // Fallback to window.location if navigate fails
+                      window.location.href = '/dashboard';
+                    }
+                  }}
+                >
+                  Go to Dashboard
+                  <ArrowRight className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
+                </Button>
+              </SignedIn>
+              <Button size="lg" className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 px-16 py-6 text-lg font-semibold shadow-luxury hover:shadow-2xl transition-all duration-500 rounded-2xl transform hover:scale-105">
                 Learn More
               </Button>
             </div>
@@ -156,7 +212,7 @@ const Landing = () => {
           </h2>
           <p className="text-2xl leading-relaxed text-gray-600 max-w-5xl mx-auto font-light tracking-wide">
             In a world where we know more about strangers online than the people next door, 
-            Radius helps you rediscover the joy of local community and meaningful connections.
+            EVERLOOM helps you rediscover the joy of local community and meaningful connections.
           </p>
         </div>
       </section>
@@ -176,22 +232,38 @@ const Landing = () => {
 
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { icon: <Mail className="w-9 h-9" />, title: "Email", desc: "hello@radius.com" },
-              { icon: <MessageCircle className="w-9 h-9" />, title: "Support", desc: "24/7 Help Center" },
-              { icon: <Phone className="w-9 h-9" />, title: "Phone", desc: "Coming Soon" },
+              { icon: <Mail className="w-9 h-9" />, title: "Email", desc: "mohitpatni786@gmail.com", link: "mailto:mohitpatni786@gmail.com" },
+              { icon: <Linkedin className="w-9 h-9" />, title: "Linkedin", desc: "Connect with us", link: "https://www.linkedin.com/company/ever-loom/" },
+              { icon: <Phone className="w-9 h-9" />, title: "Phone", desc: "Coming Soon", link: null },
             ].map((contact, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-700 border border-gray-100/50 hover:border-gray-200/80 transform hover:scale-105">
-                  <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl mb-8 group-hover:bg-gradient-to-br group-hover:from-gray-800 group-hover:to-gray-900 group-hover:text-white transition-all duration-500 shadow-md group-hover:shadow-xl">
-                    {contact.icon}
+                {contact.link ? (
+                  <a href={contact.link} target="_blank" rel="noopener noreferrer" className="block">
+                    <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-700 border border-gray-100/50 hover:border-gray-200/80 transform hover:scale-105">
+                      <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl mb-8 group-hover:bg-gradient-to-br group-hover:from-gray-800 group-hover:to-gray-900 group-hover:text-white transition-all duration-500 shadow-md group-hover:shadow-xl">
+                        {contact.icon}
+                      </div>
+                      <h3 className="text-xl font-bold mb-4 tracking-tight">
+                        {contact.title}
+                      </h3>
+                      <p className="text-gray-600 font-light text-lg">
+                        {contact.desc}
+                      </p>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-700 border border-gray-100/50 hover:border-gray-200/80 transform hover:scale-105">
+                    <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl mb-8 group-hover:bg-gradient-to-br group-hover:from-gray-800 group-hover:to-gray-900 group-hover:text-white transition-all duration-500 shadow-md group-hover:shadow-xl">
+                      {contact.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 tracking-tight">
+                      {contact.title}
+                    </h3>
+                    <p className="text-gray-600 font-light text-lg">
+                      {contact.desc}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 tracking-tight">
-                    {contact.title}
-                  </h3>
-                  <p className="text-gray-600 font-light text-lg">
-                    {contact.desc}
-                  </p>
-                </div>
+                )}
               </div>
             ))}
           </div>
@@ -217,9 +289,22 @@ const Landing = () => {
             Join thousands of people already connecting in their neighborhoods.
           </p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-20 py-8 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-2xl transform hover:scale-105">
-              Get Started Free
-            </Button>
+            <SignedOut>
+              <SignUpButton mode="redirect">
+                <Button size="lg" className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-20 py-8 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-2xl transform hover:scale-105">
+                  Get Started Free
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 px-20 py-8 text-xl font-semibold shadow-2xl hover:shadow-3xl transition-all duration-500 rounded-2xl transform hover:scale-105"
+                onClick={() => window.location.href = '/dashboard'}
+              >
+                Go to Dashboard
+              </Button>
+            </SignedIn>
             <Button variant="outline" size="lg" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-20 py-8 text-xl font-medium transition-all duration-500 rounded-2xl hover:shadow-lg">
               Watch Demo
             </Button>
@@ -234,12 +319,12 @@ const Landing = () => {
             <div className="flex items-center space-x-3 mb-3 md:mb-0">
               <div className="relative group">
                 <img 
-                  src="/lovable-uploads/a32d017a-0e12-4728-91ce-2c10d60d4e04.png" 
-                  alt="RADIUS Logo" 
-                  className="w-6 h-6 group-hover:scale-105 transition-all duration-500"
+                  src="/logo.png" 
+                  alt="EVERLOOM Logo" 
+                  className="w-10 h-10 group-hover:scale-105 transition-all duration-500 filter contrast-125 brightness-110"
                 />
               </div>
-              <span className="text-base font-black tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">RADIUS</span>
+              <span className="text-xl font-medium italic tracking-[0.05em] bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent" style={{ fontFamily: "'Cormorant Garamond', serif", textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>everloom</span>
             </div>
             <div className="flex space-x-5 text-gray-400 font-light text-sm">
               <a href="#" className="hover:text-white transition-colors duration-300 hover:scale-105 transform">Privacy</a>
