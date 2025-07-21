@@ -1,0 +1,16 @@
+{
+  "name": "everloom",
+  "version": "1.0.0",
+  "description": "Your Second Virtual Memory - AI-powered Chrome extension",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "cd frontend && npm run dev",
+    "install": "cd frontend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MohitPatni0731/everloom.git"
+  },
+  "author": "Mohit Patni",
+  "license": "MIT"
+} 
