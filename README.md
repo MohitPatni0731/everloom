@@ -1,213 +1,107 @@
-# EVERLOOM 🏘️
+# Everloom - Your Second Virtual Memory
 
-A neighborhood task-sharing application that connects community members to help each other with daily tasks and errands.
+![Everloom Logo](./frontend/public/logo.png)
 
-![EVERLOOM Logo](./logo.png)
+> Save moments. Share memories. Let AI remember for you.
 
-## 🌟 Features
+Everloom is a Virtual Memory AI startup that transforms how you interact with digital experiences. Our Chrome extension captures your preferences and creates an AI-powered memory that you can share with friends.
 
-- **Task Posting**: Create and share tasks that need help in your neighborhood
-- **Location-Based Matching**: Find tasks near your location
-- **User Profiles**: Manage your profile and track your community contributions
-- **Real-time Updates**: Live notifications for task updates using WebSocket
-- **Secure Authentication**: User authentication and authorization
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
+## 🚀 Features
+
+- **Save & Capture**: Click the extension to save your digital choices and preferences
+- **AI Learns**: Our AI analyzes your saved choices to understand your unique preferences
+- **Friends Chat**: Share your memory ID so friends can chat with your AI memory for personalized recommendations
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **React 18** with TypeScript
-- **Vite** for fast development and building
-- **Tailwind CSS** for styling
-- **shadcn/ui** components for modern UI
-- **React Router** for navigation
-- **React Query** for data fetching
-- **Clerk** for authentication (optional)
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: TailwindCSS 3 + shadcn/ui
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Notifications**: Sonner
 
-### Backend
-- **Node.js** with Express.js
-- **PostgreSQL** database
-- **WebSocket** for real-time communication
-- **JWT** for authentication
-- **bcrypt** for password hashing
-- **CORS** enabled for cross-origin requests
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-- PostgreSQL (for local development with database)
-
-### Option 1: Production Setup (Recommended)
-This uses in-memory storage and is perfect for testing and demos:
-
-```bash
-# Clone the repository
-git clone https://github.com/MohitPatni0731/everloom.git
-cd everloom
-
-# Install dependencies
-npm install
-cd backend && npm install && cd ..
-
-# Start the application
-chmod +x start-everloom.sh
-./start-everloom.sh
-```
-
-The application will be available at:
-- 🌐 **Frontend**: http://localhost:8081
-- 🔧 **Backend API**: http://localhost:3001
-
-### Option 2: Local Development with PostgreSQL
-
-```bash
-# Install PostgreSQL (macOS)
-brew install postgresql
-brew services start postgresql
-
-# Create database and user
-createdb everloom_db
-createuser everloom_user
-
-# Create backend environment file
-cd backend
-cp .env.example .env
-# Edit .env with your database credentials
-
-# Install dependencies and setup database
-npm install
-npm run db:setup
-
-# Go back to root and install frontend dependencies
-cd ..
-npm install
-
-# Start with local database
-chmod +x start-local.sh
-./start-local.sh
-```
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 everloom/
-├── src/                    # Frontend source code
-│   ├── components/         # React components
-│   ├── pages/             # Page components
-│   ├── hooks/             # Custom React hooks
-│   ├── lib/               # Utility libraries
-│   └── utils/             # Helper functions
-├── backend/               # Backend source code
-│   ├── scripts/           # Database setup scripts
-│   ├── server.js          # Main server file
-│   └── package.json       # Backend dependencies
-├── public/                # Static assets
-├── start-everloom.sh      # Production start script
-├── start-local.sh         # Local development script
-└── package.json           # Frontend dependencies
+├── frontend/                 # React frontend application
+│   ├── src/
+│   │   ├── components/      # UI components
+│   │   │   ├── ui/         # shadcn/ui components
+│   │   │   ├── layout/     # Layout components
+│   │   │   ├── sections/   # Page sections
+│   │   │   └── animations/ # Animation components
+│   │   ├── hooks/          # Custom React hooks
+│   │   ├── lib/            # Utilities and configurations
+│   │   └── store/          # State management
+│   ├── public/             # Static assets
+│   └── package.json
+└── README.md
 ```
 
-## 🔌 API Endpoints
+## 🚀 Getting Started
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
-- `GET /api/auth/profile` - Get user profile
+### Prerequisites
 
-### Tasks
-- `GET /api/tasks` - Get all tasks
-- `POST /api/tasks` - Create new task
-- `GET /api/tasks/:id` - Get specific task
-- `PUT /api/tasks/:id` - Update task
-- `DELETE /api/tasks/:id` - Delete task
+- Node.js 18+ and npm
 
-### Users
-- `GET /api/users/profile` - Get current user profile
-- `PUT /api/users/profile` - Update user profile
+### Installation
 
-## 🌐 Deployment
-
-### Frontend Deployment (Vercel/Netlify)
-1. Build command: `npm run build`
-2. Output directory: `dist`
-3. Environment variables needed:
-   - `VITE_API_URL` - Your backend API URL
-   - `VITE_CLERK_PUBLISHABLE_KEY` - Clerk key (if using Clerk)
-
-### Backend Deployment (Railway/Render/Heroku)
-1. Deploy the `backend/` folder
-2. Set environment variables:
-   - `DATABASE_URL` - PostgreSQL connection string
-   - `JWT_SECRET` - Secret for JWT tokens
-   - `PORT` - Server port (usually set automatically)
-
-## 🔧 Development
-
-### Frontend Development
+1. Clone the repository:
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
+git clone https://github.com/yourusername/everloom.git
+cd everloom
 ```
 
-### Backend Development
+2. Install frontend dependencies:
 ```bash
-cd backend
-npm run dev          # Start with nodemon
-npm run start        # Start production server
-npm run db:setup     # Setup database
-npm run db:seed      # Seed database with sample data
+cd frontend
+npm install
 ```
 
-## 📱 Features in Detail
+3. Start the development server:
+```bash
+npm run dev
+```
 
-### Task Management
-- Create tasks with title, description, location, and category
-- Set task status (open, in-progress, completed)
-- Add photos to tasks
-- Location-based task discovery
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-### User System
-- User registration and authentication
-- Profile management with avatar upload
-- Task history and statistics
-- Community reputation system
+### Available Scripts
 
-### Real-time Features
-- Live task updates via WebSocket
-- Instant notifications for task status changes
-- Real-time chat between task poster and helper
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-## 🤝 Contributing
+## 🎨 Design System
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- **Colors**: Black, grey, and white palette for sophistication
+- **Typography**: Inter for body text, JetBrains Mono for code
+- **Components**: Built with shadcn/ui and Radix UI primitives
+- **Animations**: Smooth Framer Motion transitions
 
-## 📄 License
+## 🚧 Current Status
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This is the **Phase 1 Coming Soon** website. The Chrome extension and AI backend are currently in development.
 
-## 🆘 Support
+### What's Live:
+- ✅ Beautiful landing page
+- ✅ How it works explanation
+- ✅ Waitlist signup form
+- ✅ Responsive design
+- ✅ Smooth animations
 
-If you encounter any issues or have questions:
+### Coming Next:
+- 🔄 Chrome extension MVP
+- 🔄 AI memory backend
+- 🔄 User authentication
+- 🔄 Memory vault interface
 
-1. Check the [Issues](https://github.com/MohitPatni0731/everloom/issues) page
-2. Create a new issue if your problem isn't already reported
-3. Provide detailed information about your environment and the issue
+## 📧 Contact
 
-## 🙏 Acknowledgments
-
-- Built with [React](https://reactjs.org/) and [Node.js](https://nodejs.org/)
-- UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Icons from [Lucide React](https://lucide.dev/)
+Join our waitlist to be the first to experience Virtual Memory when we launch!
 
 ---
 
-**Made with ❤️ for building stronger communities** 
+**© 2025 Everloom. Virtual Memory AI.** 
