@@ -122,14 +122,14 @@ export function ConceptSection() {
                       </div>
                   </div>
                   
-                  <div className="bg-gray-50 rounded-2xl p-4 mb-4">
-                    <h5 className="font-semibold mb-2">Saved Purchases:</h5>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• 4x Tommy Hilfiger jeans (Amazon)</li>
-                      <li>• 2x Jack & Jones jeans (Myntra)</li>
-                      <li>• 1x Levi's jeans (Flipkart)</li>
-                    </ul>
-                  </div>
+                                      <div className="bg-gray-50 rounded-2xl p-4 mb-4">
+                      <h5 className="font-semibold mb-2">Saved Purchases:</h5>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        <li>• 4x Tommy Hilfiger jeans (Amazon)</li>
+                        <li>• 2x Jack & Jones jeans (Nordstrom)</li>
+                        <li>• 1x Levi's jeans (Macy's)</li>
+                      </ul>
+                    </div>
                 </div>
 
                 {/* Right: Chat Interface */}
