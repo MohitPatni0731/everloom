@@ -1,7 +1,5 @@
 # Everloom - Your Second Virtual Memory
 
-![Everloom Logo](./frontend/public/logo.png)
-
 > Save moments. Share memories. Let AI remember for you.
 
 Everloom is a Virtual Memory AI startup that transforms how you interact with digital experiences. Our Chrome extension captures your preferences and creates an AI-powered memory that you can share with friends.
