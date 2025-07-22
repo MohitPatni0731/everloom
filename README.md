@@ -135,24 +135,6 @@ npm run dev
 
 ---
 
-## 🎨 **Design System**
-
-<div align="center">
-
-### **Color Palette**
-![Black](https://via.placeholder.com/60x30/000000/FFFFFF?text=Black) ![Grey](https://via.placeholder.com/60x30/6B7280/FFFFFF?text=Grey) ![White](https://via.placeholder.com/60x30/FFFFFF/000000?text=White)
-
-### **Typography**
-- **Headers**: Inter (Clean, modern)
-- **Code**: JetBrains Mono (Developer-friendly)
-
-### **Components**
-Built with **shadcn/ui** and **Radix UI** primitives for accessibility and consistency
-
-</div>
-
----
-
 ## 🚧 **Development Status**
 
 > **Current Phase**: Coming Soon Website (Phase 1) ✅
@@ -208,12 +190,6 @@ We welcome contributions! Here's how you can help:
 ### 🎯 **Ready to create your Virtual Memory?**
 
 [**🚀 Join Our Waitlist**](https://your-deployment-url.vercel.app) to be the first to experience the future of digital memory!
-
----
-
-**📧 Questions?** Reach out at [hello@everloom.ai](mailto:hello@everloom.ai)  
-**🐦 Follow us** [@everloom_ai](https://twitter.com/everloom_ai)  
-**💼 LinkedIn** [/company/everloom](https://linkedin.com/company/everloom)
 
 </div>
 
